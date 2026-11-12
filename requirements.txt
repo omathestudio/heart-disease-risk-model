@@ -1,3 +1,10 @@
 pandas
 scikit-learn
 matplotlib
+streamlit
+Name: scikit-learn
+Version: 1.9.1
+Name: pandas
+Version: 3.1.1
+Name: streamlit
+Version: 1.67.0
