@@ -1,0 +1,10 @@
+,value
+people,52822.0
+actual_rate,0.09
+mean_predicted_risk,0.089
+roc_auc,0.809
+pr_auc,0.277
+brier,0.073
+recall,0.748
+precision,0.21
+pct_flagged,0.321
