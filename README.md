@@ -2,6 +2,8 @@
 
 A machine learning model in **Python** and **scikit-learn** that estimates a person's probability of having heart disease from 11 common risk factors, trained on the CDC's 2025 health survey of **352,145 US adults**.
 
+**[▶ Try the live app](https://heart-disease-risk-oma.streamlit.app/)**: enter your details and see the model's estimated risk, and what's driving it.
+
 It builds on my [Heart Health Pipeline](https://github.com/omathestudio/heart-health-pipeline), which turns the raw survey file into clean data. This project takes that clean data and turns it into a predictive model.
 
 **Headline result:** on **52,822 people the model had never seen**, it ranks risk correctly 81% of the time (ROC-AUC **0.81**), catches **3 in 4** people with heart disease at a 10% risk cut-off, and its predicted risks match reality to within **0.1 percentage points**.
@@ -154,6 +156,7 @@ flowchart LR
 | Calibrate | `src/calibrate.py` | Balanced vs unweighted models, calibration chart, cut-off table |
 | Explain | `src/explain.py` | Odds ratios and chart |
 | Final test | `src/evaluate_final.py` | Retrains on train + validation, scores once on the test set, fairness check, saves the model |
+| App | `app/streamlit_app.py` | Interactive Streamlit app: risk estimate plus how it changes without each risk factor |
 
 ---
 
@@ -207,6 +210,12 @@ python src/evaluate_final.py
 
 Charts are saved to `charts/`, result tables to `results/` and the trained model to `models/`.
 
+**4. Run the app locally**
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
 ---
 
 ## Project structure
@@ -224,9 +233,11 @@ heart-disease-risk-model/
 │   ├── calibrate.py        # calibration and cut-off choice
 │   ├── explain.py          # odds ratios
 │   └── evaluate_final.py   # final test score and fairness check
+├── app/
+│   └── streamlit_app.py    # interactive app (deployed on Streamlit Community Cloud)
 ├── charts/                 # output charts (PNG)
 ├── results/                # output tables (CSV)
-├── models/                 # trained model (not in GitHub)
+├── models/                 # trained model, used by the app
 ├── requirements.txt
 └── README.md
 ```
@@ -248,7 +259,6 @@ heart-disease-risk-model/
 
 ## What I'd do next
 
-- **An interactive app** (Streamlit) where someone enters their details and sees their risk score with an explanation.
 - **Add ethnicity** to the pipeline and extend the fairness check.
 - **Confidence intervals** for the odds ratios, using `statsmodels`.
 - **Train with survey weights**, so risks describe the US population.
@@ -259,7 +269,7 @@ heart-disease-risk-model/
 
 ## Tools
 
-Python · pandas · scikit-learn · matplotlib · SQLite · Git
+Python · pandas · scikit-learn · matplotlib · Streamlit · SQLite · Git
 
 ## About
 
