@@ -26,6 +26,11 @@ TABLE_NAME = "respondents"
 # 1 = ever told they had coronary heart disease or a heart attack (CDC's _MICHD)
 TARGET = "heart_disease"
 
+# --- Cut-off for "high risk" ---
+# Chosen in Step 6 (calibrate.py) on the validation set: catches about 75% of
+# heart disease cases while flagging about a third of people.
+THRESHOLD = 0.10
+
 # --- Survey weight ---
 # Not a feature. Used later so evaluation describes the US adult population.
 WEIGHT = "survey_weight"

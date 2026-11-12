@@ -55,9 +55,9 @@ plt.rcParams.update({
 SOURCE_NOTE = "Source: CDC BRFSS 2025. Unweighted rates (the sample the model learns from)."
 
 
-def save(fig, name):
+def save(fig, name, note=SOURCE_NOTE):
     """Add the source note and save the chart as a PNG."""
-    fig.text(0.01, -0.04, SOURCE_NOTE, fontsize=8, color=MUTED)
+    fig.text(0.01, -0.04, note, fontsize=8, color=MUTED)
     CHARTS_DIR.mkdir(exist_ok=True)
     path = CHARTS_DIR / name
     fig.savefig(path, dpi=150, bbox_inches="tight")

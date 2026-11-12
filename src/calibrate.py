@@ -103,7 +103,8 @@ def main():
     ax.set_ylabel("Actual heart disease rate in that group")
     ax.set_title("Calibration: does predicted risk match reality?")
     ax.legend(frameon=False, loc="upper left")
-    save(fig, "calibration.png")
+    save(fig, "calibration.png",
+         note="Source: CDC BRFSS 2025. Validation set, 10 equal-sized risk groups.")
 
     table = pd.DataFrame(results).set_index("model").round(3)
     print("\nValidation results (lower Brier score = more honest risks):")

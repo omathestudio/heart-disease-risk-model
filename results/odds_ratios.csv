@@ -1,0 +1,15 @@
+factor,odds_ratio
+Heavy drinker,0.694
+Income: each band higher,0.873
+Education: each level higher,0.935
+BMI: each 5 points higher,1.024
+Cholesterol never checked vs normal,1.05
+Age: each 5-year band older,1.277
+No exercise in past 30 days,1.367
+Smoking: former vs never,1.446
+Diabetes,1.717
+Smoking: every day vs never,1.82
+High cholesterol,1.851
+Smoking: some days vs never,1.868
+Sex: male vs female,1.947
+High blood pressure,1.971
