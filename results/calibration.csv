@@ -1,0 +1,4 @@
+model,roc_auc,pr_auc,brier,mean_predicted_risk,actual_rate
+Logistic regression (balanced),0.814,0.285,0.185,0.378,0.09
+Logistic regression (unweighted),0.814,0.286,0.072,0.091,0.09
+Gradient boosting (balanced),0.817,0.289,0.184,0.371,0.09
